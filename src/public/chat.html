@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="css/styles.min.css" />
+</head>
+
+<body>
+    <div class="chat">
+        <div class="chat__sidebar">
+
+        </div>
+        <div class="chat__main">
+            <div id="messages" class="chat__messages"></div>
+            <div class="compose">
+                <input type="text" id="txtMessage" />
+                <input type="button" id="btnSendMessage" value="Send" />
+            </div>
+            <button id="btnLocation" name="btnLocation" value="Share My Location">Share My Location</button>
+            <script id="message-template" type="text/html">
+                <div id="message">
+                    <p>
+                        <span class="message__name">{{username}}</span>
+                        <span class="message__meta">{{ createdAt }}</span>
+                    </p>
+                    <p>{{ message }}</p>
+                </div>
+            </script>
+
+            <script id="new-member-template" type="text/html">
+                <div>
+                    <p>
+                        <span class="message__meta">{{name}} has joined!</span>
+                    <p>
+                </div>
+            </script>
+
+            <script id="member-left-template" type="text/html">
+                <div>
+                    <p>
+                        <span class="message__meta">{{message}}</span>
+                    </p>    
+                </div>
+            </script>
+
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/mustache@latest"></script>
+    <script src="js/socket.io.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/qs.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+
+</html>
